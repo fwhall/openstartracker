@@ -283,10 +283,10 @@ class nonstar:
 		s_db_y=0.0
 		s_db_z=0.0
 		w=None
-		if (current_image.match != None and current_image.match.p_match>P_MATCH_THRESH):
-			w=current_image.match.winner
-		elif (current_image.match != None and current_image.match.p_match>P_MATCH_THRESH):
-			w=current_image.match_from_lm.winner
+		if (current_image.match is not None and current_image.match.p_match > P_MATCH_THRESH):
+			w = current_image.match.winner
+		elif (current_image.match_from_lm is not None and current_image.match_from_lm.p_match > P_MATCH_THRESH):
+			w = current_image.match_from_lm.winner
 		if w != None:
 			#convert the stars to ECI
 			s_db_x=s_im.x*w.R11+s_im.y*w.R12+s_im.z*w.R13
